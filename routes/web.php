@@ -23,5 +23,4 @@ Route::get('/team', [SiteController::class, 'team']);
 Route::get('/testimonial', [SiteController::class, 'testimonial']);
 Route::get('/contact', [SiteController::class, 'contact']);
 
-
 Route::post('/orders', [SiteController::class, 'orders'])->name('orders');
