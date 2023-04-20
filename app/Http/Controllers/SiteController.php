@@ -49,6 +49,7 @@ class SiteController extends Controller
 
     public function orders(Request $request)
     {
+        // return $request;
         DB::table('orders')->insert([
             'name' => $request->name,
             'email' => $request->email,
