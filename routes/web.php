@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\InfoController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +27,11 @@ Route::get('/testimonial', [SiteController::class, 'testimonial']);
 Route::get('/contact', [SiteController::class, 'contact']);
 
 Route::post('/orders', [SiteController::class, 'orders'])->name('orders');
+
+
+Route::prefix('admin/')->name('admin.')->group(function () 
+{
+    Route::get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+
+    Route::resource('/infos', InfoController::class);
+});
